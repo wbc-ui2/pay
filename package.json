@@ -1,0 +1,36 @@
+{
+  "name": "@wbc-ui2/pay",
+  "version": "1.0.0-r01",
+  "description": "Support-hub payment component for the @wbc-ui2 ecosystem — renders a provider grid with fiat + crypto tiles, expansion panels, and clipboard-copy for on-chain addresses",
+  "main": "dist/pay2.umd.js",
+  "module": "dist/pay2.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/pay2.es.js",
+      "require": "./dist/pay2.umd.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "logo/",
+    "assets/"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "next"
+  },
+  "peerDependencies": {
+    "vue": "^2.7.16",
+    "vuetify": "^2.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbc-ui2/pay.git"
+  },
+  "homepage": "https://github.com/wbc-ui2/pay#readme",
+  "bugs": {
+    "url": "https://github.com/wbc-ui2/pay/issues"
+  }
+}

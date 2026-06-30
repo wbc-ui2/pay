@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 420" width="780" height="420">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5E35B1"/>
+      <stop offset="100%" stop-color="#311B92"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1976D2"/>
+      <stop offset="100%" stop-color="#0D47A1"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10" fill="#5E35B1"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10" fill="#1976D2"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10" fill="#D97706"/>
+    </marker>
+  </defs>
+
+  <rect width="780" height="420" rx="10" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="390" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="16" fill="#1a202c">WbPayHub Component Flow — Parse → Dispatch → Actions → Expand</text>
+
+  <!-- Stage labels -->
+  <text x="100" y="52" text-anchor="middle" font-family="Arial" font-size="9" fill="#94A3B8" font-weight="700">INPUT DATA</text>
+  <text x="290" y="52" text-anchor="middle" font-family="Arial" font-size="9" fill="#94A3B8" font-weight="700">DISPATCH</text>
+  <text x="495" y="52" text-anchor="middle" font-family="Arial" font-size="9" fill="#94A3B8" font-weight="700">TILES (RENDER)</text>
+  <text x="690" y="52" text-anchor="middle" font-family="Arial" font-size="9" fill="#94A3B8" font-weight="700">INTERACTION</text>
+
+  <!-- Input Box -->
+  <rect x="15" y="65" width="170" height="55" rx="6" fill="white" stroke="#5E35B1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="100" y="85" text-anchor="middle" font-family="monospace" font-weight="700" font-size="12" fill="#311B92">providers[]</text>
+  <text x="100" y="100" text-anchor="middle" font-family="Arial" font-size="9" fill="#64748B">PaymentProvider[]</text>
+  <text x="100" y="112" text-anchor="middle" font-family="Arial" font-size="9" fill="#64748B">fiat + crypto descriptor array</text>
+
+  <!-- Arrow Input → Dispatch -->
+  <line x1="185" y1="92" x2="212" y2="92" stroke="#5E35B1" stroke-width="1.8" marker-end="url(#arrowPurple)"/>
+
+  <!-- Dispatch Box -->
+  <rect x="220" y="65" width="140" height="55" rx="6" fill="url(#purple)" filter="url(#shadow)"/>
+  <text x="290" y="88" text-anchor="middle" font-family="Arial" font-weight="700" font-size="12" fill="white">Detect Type</text>
+  <text x="290" y="105" text-anchor="middle" font-family="monospace" font-size="9" fill="#D1C4E9">address.* vs kind</text>
+
+  <!-- Branch Arrows Dispatch → Tiles -->
+  <line x1="360" y1="80" x2="400" y2="80" stroke="#1976D2" stroke-width="1.5"/>
+  <line x1="400" y1="80" x2="400" y2="120" stroke="#1976D2" stroke-width="1.5"/>
+  <line x1="400" y1="120" x2="417" y2="120" stroke="#1976D2" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <line x1="360" y1="105" x2="400" y2="105" stroke="#D97706" stroke-width="1.5"/>
+  <line x1="400" y1="105" x2="400" y2="240" stroke="#D97706" stroke-width="1.5"/>
+  <line x1="400" y1="240" x2="417" y2="240" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+
+  <!-- Fiat Tile Box -->
+  <g transform="translate(425, 95)" filter="url(#shadow)">
+    <rect x="0" y="0" width="140" height="50" rx="5" fill="#E3F2FD" stroke="#1976D2" stroke-width="1.2"/>
+    <text x="70" y="22" text-anchor="middle" font-family="monospace" font-weight="700" font-size="11" fill="#1565C0">FiatTile</text>
+    <text x="70" y="38" text-anchor="middle" font-family="Arial" font-size="9" fill="#1976D2">kind: commercial/tip</text>
+  </g>
+
+  <!-- Crypto Tile Box -->
+  <g transform="translate(425, 215)" filter="url(#shadow)">
+    <rect x="0" y="0" width="140" height="50" rx="5" fill="#FFF8E1" stroke="#F59E0B" stroke-width="1.2"/>
+    <text x="70" y="22" text-anchor="middle" font-family="monospace" font-weight="700" font-size="11" fill="#B45309">CryptoTile</text>
+    <text x="70" y="38" text-anchor="middle" font-family="Arial" font-size="9" fill="#D97706">address: { addr, net }</text>
+  </g>
+
+  <!-- Fiat Tile -> Actions -->
+  <line x1="565" y1="120" x2="612" y2="120" stroke="#1976D2" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- Crypto Tile -> Actions -->
+  <line x1="565" y1="240" x2="612" y2="240" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+
+  <!-- Fiat Action Box -->
+  <g transform="translate(620, 80)" filter="url(#shadow)">
+    <rect x="0" y="0" width="145" height="80" rx="5" fill="white" stroke="#1976D2" stroke-width="1.2"/>
+    <text x="72" y="20" text-anchor="middle" font-family="Arial" font-weight="700" font-size="10" fill="#0D47A1">Open URL on Click</text>
+    <text x="72" y="38" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748B">window.open(url)</text>
+    <text x="72" y="52" text-anchor="middle" font-family="monospace" font-size="8" fill="#43A047">emit transaction-intent</text>
+    <text x="72" y="66" text-anchor="middle" font-family="monospace" font-size="8" fill="#43A047">emit provider-opened</text>
+  </g>
+
+  <!-- Crypto Action Box -->
+  <g transform="translate(620, 200)" filter="url(#shadow)">
+    <rect x="0" y="0" width="145" height="80" rx="5" fill="white" stroke="#D97706" stroke-width="1.2"/>
+    <text x="72" y="20" text-anchor="middle" font-family="Arial" font-weight="700" font-size="10" fill="#B45309">Copy to Clipboard</text>
+    <text x="72" y="38" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748B">navigator.clipboard</text>
+    <text x="72" y="52" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748B">.writeText(addr)</text>
+    <text x="72" y="66" text-anchor="middle" font-family="monospace" font-size="8" fill="#43A047">emit provider-opened</text>
+  </g>
+
+  <!-- Join line from actions to Expansion panel check -->
+  <line x1="692" y1="160" x2="692" y2="180" stroke="#64748B" stroke-width="1"/>
+  <line x1="692" y1="280" x2="692" y2="300" stroke="#64748B" stroke-width="1"/>
+  <line x1="692" y1="180" x2="520" y2="180" stroke="#64748B" stroke-width="1"/>
+  <line x1="692" y1="300" x2="520" y2="300" stroke="#64748B" stroke-width="1"/>
+  <line x1="520" y1="180" x2="520" y2="310" stroke="#64748B" stroke-width="1"/>
+  <line x1="520" y1="300" x2="520" y2="310" stroke="#64748B" stroke-width="1"/>
+  <line x1="520" y1="310" x2="350" y2="310" stroke="#64748B" stroke-width="1"/>
+  <line x1="350" y1="310" x2="350" y2="325" stroke="#64748B" stroke-width="1" marker-end="url(#arrowPurple)"/>
+
+  <!-- Expansion Check / Box -->
+  <g transform="translate(250, 330)" filter="url(#shadow)">
+    <rect x="0" y="0" width="200" height="55" rx="5" fill="#EDE7F6" stroke="#5E35B1" stroke-width="1.2"/>
+    <text x="100" y="20" text-anchor="middle" font-family="Arial" font-weight="700" font-size="10" fill="#311B92">Has steps[] or requirements[]?</text>
+    <text x="100" y="38" text-anchor="middle" font-family="monospace" font-size="8" fill="#5E35B1">yes → expands VExpansionPanel</text>
+    <text x="100" y="48" text-anchor="middle" font-family="monospace" font-size="8" fill="#5E35B1">no → remains static tile</text>
+  </g>
+
+  <!-- Horizontal guidelines -->
+  <line x1="290" y1="120" x2="290" y2="330" stroke="#64748B" stroke-width="0.8" stroke-dasharray="5,4" opacity="0.25"/>
+</svg>

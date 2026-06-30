@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 140" width="400" height="140">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#311B92"/>
+      <stop offset="100%" style="stop-color:#7E57C2"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1A237E"/>
+      <stop offset="100%" style="stop-color:#311B92"/>
+    </linearGradient>
+  </defs>
+
+  <!-- WBC hex icon -->
+  <polygon points="70,20 120,45 120,95 70,120 20,95 20,45" fill="url(#g)" stroke="#1A237E" stroke-width="2"/>
+  <text x="70" y="82" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="32" fill="white">WBC</text>
+
+  <!-- subtag -->
+  <rect x="50" y="88" width="40" height="14" rx="3" fill="#1A237E" opacity="0.85"/>
+  <text x="70" y="99" text-anchor="middle" font-family="monospace" font-size="8" fill="white">PAY</text>
+
+  <!-- Type label -->
+  <text x="150" y="50" font-family="Arial, sans-serif" font-weight="900" font-size="36" fill="url(#g2)">@wbc-ui2</text>
+  <text x="150" y="72" font-family="Arial, sans-serif" font-weight="700" font-size="24" fill="#4527A0">/ pay2</text>
+
+  <!-- Tagline -->
+  <text x="150" y="100" font-family="Arial, sans-serif" font-size="13" fill="#546E7A">Support Hub · Fiat + Crypto · JSON → VNodes</text>
+
+  <!-- Decorative dots -->
+  <circle cx="155" cy="112" r="2.5" fill="#311B92" opacity="0.5"/>
+  <circle cx="165" cy="112" r="2.5" fill="#7E57C2" opacity="0.5"/>
+  <circle cx="175" cy="112" r="2.5" fill="#B39DDB" opacity="0.5"/>
+</svg>
